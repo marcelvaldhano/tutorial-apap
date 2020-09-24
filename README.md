@@ -26,3 +26,8 @@ Spring masih bisa digunakan untuk enterprise, databases, dll.
 RequestParam digunakan untuk mengakses parameter nilai query dari request yang diberikan sedangkan PathVariable untuk mengambil data dan mengetahui pattern yang digunakan dalam URI untuk request selanjutnya.
 RequestParam digunakan saat website anda memiliki data pada parameter yang telah ditentukan sedangkan PathVariable digunakan ketika pada link terdapat sebuah pola yang sudah pasti (seperti lab tutorial kali ini yaitu height dan weight) 
 ### What I did not understand
+1. Saya masih tidak mengerti apa manfaat mata kuliah APAP
+2. Saya masih bingung terhadap tool-tool yang kita gunakan untuk mata kuliah ini karena terlalu banyak dan membingungkan
+3. Saya masih tidak terlalu mengerti mengenai penerapan Dependency Injection pada tutorial kali ini
+4. Saya masih tidak terlalu mengerti manfaat dari masing-masing framework yang ada
+dan masih banyak lagi.
