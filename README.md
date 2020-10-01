@@ -31,3 +31,24 @@ RequestParam digunakan saat website anda memiliki data pada parameter yang telah
 3. Saya masih tidak terlalu mengerti mengenai penerapan Dependency Injection pada tutorial kali ini
 4. Saya masih tidak terlalu mengerti manfaat dari masing-masing framework yang ada
 dan masih banyak lagi.
+
+# Section 2
+1. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
+http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
+&noTelepon=081xxx. Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi
+- Yang terjadi adalah data hotel yang ada pada link telah disimpan dan layar akan mereturn halaman html yang dituju.
+2. Menurut kamu anotasi @Autowired pada class Controller tersebut merupakan
+implementasi dari konsep apa? Dan jelaskan secara singkat cara kerja @Autowired tersebut dalam
+konteks service dan controller yang telah kamu buat
+- Sepemahaman saya, @Autowired pada class Controller merupakan implementasi dari konsep OOP (antar class dengan class). Dengan adanya Autowired kita tidak perlu lagi menggunakan configuration dan setter getter, Autowired adalah sebuah setter method yang digunakan dalam element in XML configuration file.
+3. Cobalah untuk menambahkan sebuah Hotel dengan mengakses link berikut:
+http://localhost:8080/hotel/add?idHotel=1&namaHotel=Papa%20APAP&alamat=Quanta%20Fasilkom
+Apa yang terjadi? Jelaskan mengapa hal tersebut dapat terjadi
+- Yang terjadi adalah error karena addhotel pada class HotelController telah ditulis bahwa semua data required (dibutuhkan) dan tidak boleh kosong.
+4. Jika Papa APAP ingin melihat Hotel dengan nama Papa APAP, link apa yang harus
+diakses?
+- untuk saat ini tidak bisa karena belum saya programkan fitur, mungkin untuk liat hotel yang terdaftar bisa akses http://localhost:8080/hotel/viewall/
+5. Tambahkan 1 contoh Hotel lainnya sesukamu. Lalu cobalah untuk mengakses
+http://localhost:8080/hotel/viewall , apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
+- Yang akan ditampilkan adalah seluruh nama hotel yang telah terdaftar sebelumnya.
+<img src="/traveloke/screenshot.jpg" alt="Foto Task 5">
