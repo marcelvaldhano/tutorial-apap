@@ -51,4 +51,5 @@ diakses?
 5. Tambahkan 1 contoh Hotel lainnya sesukamu. Lalu cobalah untuk mengakses
 http://localhost:8080/hotel/viewall , apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
 - Yang akan ditampilkan adalah seluruh nama hotel yang telah terdaftar sebelumnya.
-<img src="/traveloke/screenshot.jpg" alt="Foto Task 5">
+<img src="/traveloke/screenshot.JPG" alt="Foto Task 5">
+Kalau ga kelihatan bisa buka folder traveloke, ada file screenshot.jpg
