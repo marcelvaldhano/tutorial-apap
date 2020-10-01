@@ -52,4 +52,4 @@ diakses?
 http://localhost:8080/hotel/viewall , apa yang akan ditampilkan? Sertakan juga bukti screenshotmu.
 - Yang akan ditampilkan adalah seluruh nama hotel yang telah terdaftar sebelumnya.
 <img src="/traveloke/screenshot.JPG" alt="Foto Task 5">
-Kalau ga kelihatan bisa buka folder traveloke, ada file screenshot.jpg
+Kalau ga kelihatan bisa buka folder traveloke, terdapat file screenshot.jpg
