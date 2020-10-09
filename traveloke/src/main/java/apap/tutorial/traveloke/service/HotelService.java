@@ -1,9 +1,17 @@
 package apap.tutorial.traveloke.service;
 import apap.tutorial.traveloke.model.HotelModel;
+import apap.tutorial.traveloke.model.KamarModel;
+
 import java.util.List;
+import java.util.Optional;
+
 public interface HotelService {
     void addHotel(HotelModel hotel);
-    List<HotelModel> getHotelList();
-    HotelModel getHotelByIdHotel(String idHotel);
 
+    void deleteHotel(HotelModel hotel);
+
+    List<HotelModel> getHotelList();
+    HotelModel getHotelByIdHotel(Long idHotel);
+    HotelModel updateHotel(HotelModel hotel);
+    List<HotelModel>findAllByOrderByIdDesc();
 }

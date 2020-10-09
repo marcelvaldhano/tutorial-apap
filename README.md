@@ -53,3 +53,19 @@ http://localhost:8080/hotel/viewall , apa yang akan ditampilkan? Sertakan juga b
 - Yang akan ditampilkan adalah seluruh nama hotel yang telah terdaftar sebelumnya.
 <img src="/traveloke/screenshot.JPG" alt="Foto Task 5">
 Kalau ga kelihatan bisa buka folder traveloke, terdapat file screenshot.jpg
+
+# Section 3
+1. Pada class KamarDb, terdapat method findAllByHotelId, apakah kegunaan dari method tersebut?
+- Method tersebut beguna untuk mencari semua kamar yang memiliki id hotel yang sesuai dengan parameter yang diberikan. Hasil dari findAllByHotelId adalah mengembalikkan isi list semua objek kamar yang terdapat pada id hotel tersebut.
+2. Pada class HotelController, jelaskan perbedaan method addHotelFormPage dan addHotelSubmit?
+- Pada method addHotelFormPage akan dilakukan penampilan form-add-hotel.html yang tujuannya untuk mengisi dan melakukan aksi berupa penambahan hotel. Sedangkan pada addHotelSubmit adalah method yang melakukan penambahan hotel yang telah didaftar sebelumnya (addHotelFormPage) ke hotelservice yang akan dikirimkan ke database
+3. Jelaskan kegunaan dari JPA Repository!
+- JPA Repository adalah sebuah interface yang berguna untuk mengakses database melalui JPA. Dengan adanya JPA Repository kita akan lebih mudah menquery/mengambil data yang terdapat di database. Salah satu contoh penerapan pada tutorial kali ini adalah method findAllByOrderByIdDesc yang memudahkan kita untuk menampilkan semua hotel dalam keadaan terurut dari id hotel yang terakhir ditambahkan tanpa perlu melakukan iterasi atau apapun itu.
+4. Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara HotelModel dan KamarModel dibuat?
+Kedua relasi tersebut berada pada bagian 
+<img src="/traveloke/screenshot1.JPG" alt="Foto Task 4"> <img src="/traveloke/screenshot2.JPG" alt="Foto Task 4">
+- Dibagian Many-to-One dan One-to-Many relasi HotelModel berelasi dengan KamarModel, hal tersebut sesuai dengan gambar EERD yang telah diberikan pada soal.
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER!
+-	1.FetchType.Lazy= sebuah JPA yang berfungsi untuk menquery data secara spesifik (mengambil data sendiri/yang diinginkan)
+	2.FetchType.Eager= sebuah JPA yang berfungsi untuk menquery data secara menyeluruh 
+	3.CascadeType.All= salah satu cascadetype dari JPA yang memiliki operasi yang sangat lengkap dan CascadeType.All berguna untuk melakukan operasi-operasi yang diinginkan kepada entitas seperti: Persist, Merge, Request, Remove, Detach.
