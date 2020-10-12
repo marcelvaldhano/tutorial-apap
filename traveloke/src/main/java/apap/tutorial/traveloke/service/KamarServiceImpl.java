@@ -23,11 +23,14 @@ public class KamarServiceImpl implements KamarService{
         kamarDb.deleteByNoKamar(noKamar);
     }
 
+    @Override
+    public List<KamarModel> getKamarModelByNamaKamarAndKapasitasKamar(String namaKamar, Integer kapasitasKamar){return kamarDb.getKamarModelByNamaKamarAndKapasitasKamar(namaKamar,kapasitasKamar);}
 
     @Override
     public void addKamar(KamarModel kamar){
         kamarDb.save(kamar);
     }
+
     @Override
     public List<KamarModel> findAllKamarByIdHotel(Long idHotel){
         return kamarDb.findByHotelId(idHotel);

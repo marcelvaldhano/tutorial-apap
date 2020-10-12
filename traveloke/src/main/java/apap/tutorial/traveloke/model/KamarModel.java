@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="kamar")
@@ -29,11 +30,8 @@ public class KamarModel implements Serializable{
     @Column(name="kapasitasKamar",nullable=false)
     private Integer kapasitasKamar;
 
-    @ManyToOne(fetch = FetchType.EAGER,optional=false)
-    @JoinColumn(name="hotelId", referencedColumnName="id",nullable=false)
-    @OnDelete(action=OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private HotelModel hotel;
+    @OneToMany(mappedBy = "review",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<ReviewModel> reviewModel;
 
     public Long getNoKamar() {
         return noKamar;
@@ -67,11 +65,5 @@ public class KamarModel implements Serializable{
         this.kapasitasKamar = kapasitasKamar;
     }
 
-    public HotelModel getHotel() {
-        return hotel;
-    }
 
-    public void setHotel(HotelModel hotel) {
-        this.hotel = hotel;
-    }
 }

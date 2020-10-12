@@ -13,4 +13,5 @@ public interface KamarDb extends JpaRepository<KamarModel,Long> {
     Optional<KamarModel> findByNoKamar(Long NoKamar);
     public void deleteByNoKamar(Long noKamar);
     List<KamarModel>findByHotelId(Long hotelId);
+    List<KamarModel>getKamarModelByNamaKamarAndKapasitasKamar(String namaKamar, Integer kapasitasKamar);
 }

@@ -29,7 +29,7 @@ public class HotelModel implements Serializable{
     @Column(name="nomorTelepon",nullable=false)
     private String nomorTelepon;
 
-    @OneToMany(mappedBy = "hotel",fetch=FetchType.LAZY,cascade = CascadeType.ALL)
+
     private List<KamarModel> listKamar;
 
     public Long getId() {
