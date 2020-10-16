@@ -65,15 +65,15 @@ public class KamarController {
 //
 //    public void addKamar(KamarModel kamar) { this.kamars.add(kamar); }
 
-    @RequestMapping(value="/kamar/add-multiple/{noKamar}")
-    public String addRow(
-            @PathVariable Long noKamar, KamarModel kamars, Model model, final BindingResult bindingResult
-    ) {
-        KamarModel kamar=kamarService.getKamarByNoKamar(noKamar);
-
-
-        return "form-update-kamar";
-    }
+//    @RequestMapping(value="/kamar/add-multiple/{noKamar}")
+//    public String addRow(
+//            @PathVariable Long noKamar, KamarModel kamars, Model model, final BindingResult bindingResult
+//    ) {
+//        KamarModel kamar=kamarService.getKamarByNoKamar(noKamar);
+//
+//
+//        return "form-update-kamar";
+//    }
 
     @PostMapping("/kamar/add")
     private String addKamarSubmit(
