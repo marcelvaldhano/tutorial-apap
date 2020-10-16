@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Add Hotel</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h2>Hello</h2>
+<nav th:replace="fragments/fragment :: navbar(currentPageName='Add Hotel')"></nav>
 <h3>Tambah Hotel</h3>
 <form th:action="@{/hotel/add}"th:object="${hotel}" method="POST">
-    Nama Hotel: <br>
-    <input type="textt" name="namaHotel"/>
-    <br><br>
-    Alamat : <br>
-    <input type="text" name="alamat"/>
-    <br><br>
-    Nomor Telepon : <br>
-    <input type="number" name="nomorTelepon"/>
-    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nama Hotel:</th>
+            <th>Alamat:</th>
+            <th>Nomor Telepon:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <input type="hidden"th:field="*{id}">
+            <th>  <input type="text" name="namaHotel"/></th>
+            <th><input type="text" name="alamat"/></th>
+            <th> <input type="number" name="nomorTelepon"/></th>
+        </tr>
+
+        </tbody>
+
+    </table>
+
     <button type="submit">Submit</button>
 </form>
 

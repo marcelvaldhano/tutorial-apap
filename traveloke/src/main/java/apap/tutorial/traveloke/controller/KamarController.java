@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -59,6 +60,21 @@ public class KamarController {
         return "form-add-kamar";
     }
 
+
+//    private List<KamarModel> kamars;
+//
+//    public void addKamar(KamarModel kamar) { this.kamars.add(kamar); }
+
+    @RequestMapping(value="/kamar/add-multiple/{noKamar}")
+    public String addRow(
+            @PathVariable Long noKamar, KamarModel kamars, Model model, final BindingResult bindingResult
+    ) {
+        KamarModel kamar=kamarService.getKamarByNoKamar(noKamar);
+
+
+        return "form-update-kamar";
+    }
+
     @PostMapping("/kamar/add")
     private String addKamarSubmit(
             @ModelAttribute KamarModel kamar,
@@ -72,13 +88,17 @@ public class KamarController {
         return "add-kamar";
     }
 
-    @GetMapping("/kamar/delete/{noKamar}")
-    public String deleteKamar (
-            @PathVariable Long noKamar,
+
+
+    @PostMapping(path="/kamar/delete")
+    public String deleteKamarFormSubmit(
+            @ModelAttribute HotelModel hotel,
             Model model
     ){
-
-        kamarService.deleteByNoKamar(noKamar);
+        model.addAttribute("kamarCount", hotel.getListKamar().size());
+        for(KamarModel kamar:hotel.getListKamar()){
+            kamarService.deleteKamar(kamar);
+        }
         return "delete-kamar";
     }
 

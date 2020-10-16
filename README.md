@@ -69,3 +69,13 @@ Kedua relasi tersebut berada pada bagian
 -	1.FetchType.Lazy= sebuah JPA yang berfungsi untuk menquery data secara spesifik (mengambil data sendiri/yang diinginkan)
 	2.FetchType.Eager= sebuah JPA yang berfungsi untuk menquery data secara menyeluruh 
 	3.CascadeType.All= salah satu cascadetype dari JPA yang memiliki operasi yang sangat lengkap dan CascadeType.All berguna untuk melakukan operasi-operasi yang diinginkan kepada entitas seperti: Persist, Merge, Request, Remove, Detach.
+
+# Section 4
+1. Jelaskan perbedaan th:include dan th:replace!
+- th:include berfungsi untuk memasukkan fragment yang ditentukan sebagai body tag host-nya tetapi mengecualikan fragment tag. Sedangkan th:replace berfungsi untuk mensubsitusi secara langsung tag dimana ada th:replace fragment beserta tag.
+2. Jelaskan apa fungsi dari th:object!
+- th:object berfungsi untuk membuat form dan menanggani command object (menampung sebuah object yang terdapat pada controller). Dengan th:object kita bisa mengetahui model attribute apa yang dibutuhkan dari perintah yang ingin kita lakukan.
+3. Jelaskan perbedaan dari * dan $ pada saat penggunaan th:object! Kapan harus dipakai?
+- * itu berfungsi untuk mengekspresikan variabel yang lebih spesifik sehingga tidak semua isi dari variable tersebut akan diambil sedangkan $ berfungsi untuk mengekspresikan variabel yang lebih umum (semua isi variabel diambil). Keduanya memiliki peran yang sama yaitu sebagai variable expression tetapi akan berbeda apabila objek yang diambil lebih spesifik. * digunakan apabila suatu variabel memiliki objek yang lebih spesifik contohnya yaitu *{kamar.nokamar}. Sedangkan $ digunakan ketika variabel memiliki cakupan yang lebih luas misalkan ${hotel} yang dimiliki oleh banyak komponen yaitu id, alamat, no telp.
+4. Bagaimana kamu menyelesaikan latihan nomor 3?
+- Saya menerapkan th:text="${currentPageName}" untuk mengevaluasi value expressionnya. Lalu ditiap halaman saya me-replace value expression tersebut sesuai dengan halaman yang sedang diakses sekarang.

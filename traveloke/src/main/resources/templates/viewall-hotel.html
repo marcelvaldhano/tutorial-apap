@@ -2,15 +2,44 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <title>View Hotel</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
+<nav th:replace="fragments/fragment :: navbar(currentPageName='ViewAll Hotel')"></nav>
 <h2>Daftar Seluruh Hotel</h2>
-<div th:each="hotel: ${listHotel}">
-    <h3 th:text="'Id Hotel: '+ ${hotel.id}"></h3>
-    <h3 th:text="'Nama Hotel: '+ ${hotel.namaHotel}"></h3>
-    <h3 th:text="'Alamat Hotel: '+ ${hotel.alamat}"></h3>
-    <h3 th:text="'Nomor Telepon: '+ ${hotel.nomorTelepon}"></h3>
-    <hr>
-</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id Hotel</th>
+                <th>Nama Hotel</th>
+                <th>Alamat Hotel</th>
+                <th>Nomor Telepon</th>
+                <th>Lihat</th>
+                <th>Ubah</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="hotel: ${listHotel}">
+                <td th:text="${hotel.id}"></td>
+                <td th:text="${hotel.namaHotel}"></td>
+                <td th:text="${hotel.alamat}"></td>
+                <td th:text="${hotel.nomorTelepon}"></td>
+                <td><a th:href="@{/hotel/view/}+${hotel.id}">Lihat</a></td>
+                <td><a th:href="@{/hotel/change/}+${hotel.id}">Change Data Hotel</a></td>
+                <td><a th:href="@{/hotel/delete/}+${hotel.id}">Delete Hotel</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<!--<div th:each="hotel: ${listHotel}">-->
+<!--    <h3 th:text="'Id Hotel: '+ ${hotel.id}"></h3>-->
+<!--    <h3 th:text="'Nama Hotel: '+ ${hotel.namaHotel}"></h3>-->
+<!--    <h3 th:text="'Alamat Hotel: '+ ${hotel.alamat}"></h3>-->
+<!--    <h3 th:text="'Nomor Telepon: '+ ${hotel.nomorTelepon}"></h3>-->
+<!--    <hr>-->
+<!--</div>-->
 </body>
 </html>

@@ -2,25 +2,53 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Update Data Model</title>
+    <title>Update Data Kamar</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
 </head>
 <body>
-<h2>Change Data Model</h2>
+<nav th:replace="fragments/fragment :: navbar(currentPageName='Update Kamar')"></nav>
+<h2>Change Data Kamar</h2>
 <form th:action="@{/kamar/change}" th:object="${kamar}" method="POST">
-    <input type="hidden"th:field="*{noKamar}">
-    Nama Kamar: <br>
-    <input type="text" name="namaKamar" th:value="*{namaKamar}"/>
-    <br><br>
-    Tipe : <br>
-    <select name="tipe">
-        <option value="0">Deluxe</option>
-        <option value="1">Executive</option>
-        <option value="2">President Suite</option>
-    </select>
-    <br><br>
-    Kapasitas Kamar : <br>
-    <input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/>
-    <br><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nama Kamar:</th>
+            <th>Tipe:</th>
+            <th>Kapasitas Kamar</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <input type="hidden"th:field="*{noKamar}">
+            <th><input type="text" name="namaKamar" th:value="*{namaKamar}"/></th>
+            <th><select name="tipe">
+                <option value="0">Deluxe</option>
+                <option value="1">Executive</option>
+                <option value="2">President Suite</option>
+            </select></th>
+            <th><input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/></th>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+<!--    <input type="hidden"th:field="*{noKamar}">-->
+<!--    Nama Kamar: <br>-->
+<!--    <input type="text" name="namaKamar" th:value="*{namaKamar}"/>-->
+<!--    <br><br>-->
+<!--    Tipe : <br>-->
+<!--    <select name="tipe">-->
+<!--        <option value="0">Deluxe</option>-->
+<!--        <option value="1">Executive</option>-->
+<!--        <option value="2">President Suite</option>-->
+<!--    </select>-->
+<!--    <br><br>-->
+<!--    Kapasitas Kamar : <br>-->
+<!--    <input type="number" name="kapasitasKamar" th:value="*{kapasitasKamar}"/>-->
+<!--    <br><br>-->
     <button type="submit" value="submit">Submit</button>
 
 </form>

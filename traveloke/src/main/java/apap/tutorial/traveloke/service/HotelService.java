@@ -9,6 +9,9 @@ public interface HotelService {
     void addHotel(HotelModel hotel);
 
     void deleteHotel(HotelModel hotel);
+//    void deleteByNoHotel(Long id);
+
+    void deleteByNoHotel(HotelModel hotel);
 
     List<HotelModel> getHotelList();
     HotelModel getHotelByIdHotel(Long idHotel);

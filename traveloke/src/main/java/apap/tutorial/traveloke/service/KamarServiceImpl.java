@@ -23,6 +23,10 @@ public class KamarServiceImpl implements KamarService{
         kamarDb.deleteByNoKamar(noKamar);
     }
 
+    @Override
+    public void deleteKamar(KamarModel kamar) {
+        kamarDb.delete(kamar);
+    }
 
     @Override
     public void addKamar(KamarModel kamar){
