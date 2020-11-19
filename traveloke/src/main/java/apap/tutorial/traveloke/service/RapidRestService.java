@@ -4,5 +4,5 @@ import reactor.core.publisher.Mono;
 
 
 public interface RapidRestService {
-    Mono<String> getHotele(String cityName);
+    Mono<String> getHotel(String cityName);
 }

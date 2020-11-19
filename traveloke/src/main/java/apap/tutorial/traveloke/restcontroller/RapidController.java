@@ -19,7 +19,7 @@ public class RapidController {
     public Mono<String> viewDetailHotel(
             @RequestParam(value = "cityName") String cityName
     ){
-        return rapidRestService.getHotele(cityName);
+        return rapidRestService.getHotel(cityName);
 
     }
 }
