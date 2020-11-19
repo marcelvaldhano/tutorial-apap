@@ -62,6 +62,25 @@ public class HotelController {
 
     }
 
+
+    @GetMapping("/hotel/view/{idHotel}")
+    public String viewhotel(
+            @PathVariable Long idHotel,
+            Model model
+    ){
+        try{
+            HotelModel hotel=hotelService.getHotelByIdHotel(idHotel);
+            List<KamarModel> listKamar=kamarService.findAllKamarByIdHotel(idHotel);
+            model.addAttribute("hotel",hotel);
+            model.addAttribute("listKamar",listKamar);
+            return "view-hotel";
+        }
+        catch(Exception e){
+            return "error-page";
+        }
+
+    }
+
     @PostMapping("/hotel/change")
     public String changeHotelFormSubmit(
             @ModelAttribute HotelModel hotel,
@@ -89,12 +108,14 @@ public class HotelController {
 
     }
 
+
     @RequestMapping("/hotel/viewall")
     public String listHotel (Model model){
         List<HotelModel> listHotel=hotelService.getHotelList();
         model.addAttribute("listHotel", listHotel);
         return "viewall-hotel";
     }
+
 
     @RequestMapping("/hotel/delete/{idHotel}")
     public String deleteHotel (

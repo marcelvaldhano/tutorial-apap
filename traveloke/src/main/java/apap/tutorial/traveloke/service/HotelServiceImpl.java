@@ -1,6 +1,7 @@
 package apap.tutorial.traveloke.service;
 
 import apap.tutorial.traveloke.model.HotelModel;
+import apap.tutorial.traveloke.model.KamarModel;
 import apap.tutorial.traveloke.repository.HotelDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,11 +20,28 @@ public class HotelServiceImpl implements HotelService{
     public void addHotel(HotelModel hotel){
         hotelDb.save(hotel);
     }
+
     @Override
-    public void deleteHotel(HotelModel hotel){hotelDb.delete(hotel);}
+    public void deleteHotel(HotelModel hotel) {
+        hotelDb.delete(hotel);
+    }
+
+//    @Override
+//    public void deleteByNoHotel(Long id) {
+//        hotelDb.deleteByNoHotel(id);
+//    }
+
+    @Override
+    public void deleteByNoHotel(HotelModel hotel){hotelDb.delete(hotel);}
 
     @Override
     public List<HotelModel>getHotelList(){return hotelDb.findAll();}
+
+//    @Override
+//    public void deleteHotel(HotelModel hotel) {
+//        hotelDb.delete(hotel);
+//    }
+
 
     @Override
     public List<HotelModel> findAllByOrderByIdDesc(){return hotelDb.findAllByOrderByIdDesc();}
