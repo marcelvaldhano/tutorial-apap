@@ -34,7 +34,6 @@ public class KamarModel implements Serializable{
     @ManyToOne(fetch = FetchType.EAGER,optional=false)
     @JoinColumn(name="hotelId", referencedColumnName="id",nullable=false)
     @OnDelete(action=OnDeleteAction.CASCADE)
-    @JsonIgnore
     private HotelModel hotel;
 
     public Long getNoKamar() {

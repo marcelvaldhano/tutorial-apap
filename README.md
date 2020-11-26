@@ -79,3 +79,15 @@ Kedua relasi tersebut berada pada bagian
 - * itu berfungsi untuk mengekspresikan variabel yang lebih spesifik sehingga tidak semua isi dari variable tersebut akan diambil sedangkan $ berfungsi untuk mengekspresikan variabel yang lebih umum (semua isi variabel diambil). Keduanya memiliki peran yang sama yaitu sebagai variable expression tetapi akan berbeda apabila objek yang diambil lebih spesifik. * digunakan apabila suatu variabel memiliki objek yang lebih spesifik contohnya yaitu *{kamar.nokamar}. Sedangkan $ digunakan ketika variabel memiliki cakupan yang lebih luas misalkan ${hotel} yang dimiliki oleh banyak komponen yaitu id, alamat, no telp.
 4. Bagaimana kamu menyelesaikan latihan nomor 3?
 - Saya menerapkan th:text="${currentPageName}" untuk mengevaluasi value expressionnya. Lalu ditiap halaman saya me-replace value expression tersebut sesuai dengan halaman yang sedang diakses sekarang.
+
+# Section 5
+1. Apa itu Postman? Apa kegunaannya?
+- Postman adalah sebuah aplikasi yang berfungsi sebagai REST Client. Postman biasanya digunakan untuk melakukan uji coba terhadap REST API yang telah kita buat sebelumnya.
+2. Jelaskan fungsi dari anotasi @JsonIgnoreProperties dan @JsonProperty.
+- @JsonProperty biasanya digunakan untuk memberikan spesifikasi list atribut dari sebuah class yang akan diabaikan ketika menjalankan serialization dan deserialization JSON. Jika kita tidak menggunakan annotation tsb maka terjadi error saat menjalankan serialization dan deserialization ketika Java Object tidak memiliki field yang dimiliki oleh JSON.
+3. Apa kegunaan atribut WebClient?
+- Web client digunakan untuk menghubungkan komputer dalam sebuah jaringan internet yang meminta informasi. Untuk dapat mengakses web server maka diperlukan sebuah web client untuk menggunakan aplikasi yang disebut Web Browser.
+4. Apa itu ResponseEntity dan BindingResult? Apa kegunaannya?
+- ResponseEntity adalah sebuah class yang merepresentasikan HTTP Response termaksud status code, headers, dan body secara keseluruha sedangkan BindingResult adalah sebuah validator object yang terdapat pada Controller.
+Kegunaan ResponseEntity: ResponseEntity dapat digunakan dalam memanipulasi HTTP Response.
+Kegunaan BindingResult: BindingREsult dapat digunakan dalam menyimpan hasil validasi dan binding serta berisi error-error yang mungkin terjadi. BindingResult harus muncul setelah object telah divalidasi.
