@@ -95,20 +95,24 @@ Kegunaan BindingResult: BindingREsult dapat digunakan dalam menyimpan hasil vali
 # Section 6
 1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
 	- Otentikasi adalah proses melakuka verifikasi terhadap seseorang, apakah user memiliki hak untuk login kedalam website. Otentikasi dapat berupa username atau password. Pada tutorial kali ini, otentikasi terdapat pada bagian WebConfig.
-'''
+
+```
 public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
         auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
     }
-'''
-* Otorisasi adalah proses pengecekan yang dilakukan setelah user telah mendapatkan otentikasi. Hal ini berguna untuk mengecek apakah user telah diberikan hak akses untuk melakukan perubahan pada website. Pada tutorial ini, otorisasi terdapat pada bagian WebConfig.
-'''
+```
+
+	- Otorisasi adalah proses pengecekan yang dilakukan setelah user telah mendapatkan otentikasi. Hal ini berguna untuk mengecek apakah user telah diberikan hak akses untuk melakukan perubahan pada website. Pada tutorial ini, otorisasi terdapat pada bagian WebConfig.
+
+```
 http
                 .authorizeRequests()
                 .antMatchers("/css/**").permitAll()
                 .antMatchers("/js/**").permitAll()
                 .antMatchers("/hotel/**").hasAuthority("RECEPTIONIST")
                 .anyRequest().authenticated()
-'''
+```
+
 2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.
 	- BCryptPasswordEncoder adalah sebuah teknik hashing yang digunakan untuk password yang telah diinput oleh user. Sebelum password diinput ke dalam database, password tersebut akan dihashing menjadi code yang sulit dimengerti oleh manusia. Kegunaan dari BCryptPasswordEncoder adalah menjaga password dari user/hacker yang telah mendapatkan hak akses ke dalam database.
 3. Jelaskan secara singkat apa itu UUID beserta penggunaannya!
