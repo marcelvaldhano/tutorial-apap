@@ -92,7 +92,7 @@ Kedua relasi tersebut berada pada bagian
 Kegunaan ResponseEntity: ResponseEntity dapat digunakan dalam memanipulasi HTTP Response.
 Kegunaan BindingResult: BindingREsult dapat digunakan dalam menyimpan hasil validasi dan binding serta berisi error-error yang mungkin terjadi. BindingResult harus muncul setelah object telah divalidasi.
 
-#Section 6
+# Section 6
 1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat) konsep tersebut diimplementasi?
 	- Otentikasi adalah proses melakuka verifikasi terhadap seseorang, apakah user memiliki hak untuk login kedalam website. Otentikasi dapat berupa username atau password. Pada tutorial kali ini, otentikasi terdapat pada bagian WebConfig.
 '''
