@@ -91,3 +91,29 @@ Kedua relasi tersebut berada pada bagian
 - ResponseEntity adalah sebuah class yang merepresentasikan HTTP Response termaksud status code, headers, dan body secara keseluruha sedangkan BindingResult adalah sebuah validator object yang terdapat pada Controller.
 Kegunaan ResponseEntity: ResponseEntity dapat digunakan dalam memanipulasi HTTP Response.
 Kegunaan BindingResult: BindingREsult dapat digunakan dalam menyimpan hasil validasi dan binding serta berisi error-error yang mungkin terjadi. BindingResult harus muncul setelah object telah divalidasi.
+
+#Section 6
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda
+buat) konsep tersebut diimplementasi?
+* Otentikasi adalah proses melakuka verifikasi terhadap seseorang, apakah user memiliki hak untuk login kedalam website. Otentikasi dapat berupa username atau password. Pada tutorial kali ini, otentikasi terdapat pada bagian WebConfig
+<mark>   
+public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception{
+        auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
+    }
+</mark>
+* Otorisasi adalah proses pengecekan yang dilakukan setelah user telah mendapatkan otentikasi. Hal ini berguna untuk mengecek apakah user telah diberikan hak akses untuk melakukan perubahan pada website. Pada tutorial ini, otorisasi terdapat pada bagian WebConfig
+<mark>
+ http
+                .authorizeRequests()
+                .antMatchers("/css/**").permitAll()
+                .antMatchers("/js/**").permitAll()
+                .antMatchers("/hotel/**").hasAuthority("RECEPTIONIST")
+                .anyRequest().authenticated()
+</mark>
+2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerja dan tujuannya.
+* BCryptPasswordEncoder adalah sebuah teknik hashing yang digunakan untuk password yang telah diinput oleh user. Sebelum password diinput ke dalam database, password tersebut akan dihashing menjadi code yang sulit dimengerti oleh manusia. Kegunaan dari BCryptPasswordEncoder adalah menjaga password dari user/hacker yang telah mendapatkan hak akses ke dalam database.
+3. Jelaskan secara singkat apa itu UUID beserta penggunaannya!
+* UUID adalah sebuah hex digit yang terdiri dari 32 digit random character yang digunakan dalam class UserModel dengan tujuan untuk menambah keamanan user karena id user akan digenerate menjadi 32 random character sehingga user/hacker tidak dapat mengambil userid dengan mudah.
+4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah
+memiliki class UserRoleServiceImpl.java?
+* UserDetailsImpl berguna untuk mereturn userauthorities ketika melakukan login. Class ini berguna untuk memberikan otorisasi kepada user yang melakukan login. Kalau Class UserRoleServiceImpl berguna untuk mengecek hak akses user dan memberikan otentikasi kepada user berdasarkan role yang telah ditetapkan pada database.
