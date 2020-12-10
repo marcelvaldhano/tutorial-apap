@@ -120,3 +120,38 @@ http
 4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah
 memiliki class UserRoleServiceImpl.java?
 	- UserDetailsImpl berguna untuk mereturn userauthorities ketika melakukan login. Class ini berguna untuk memberikan otorisasi kepada user yang melakukan login. Kalau Class UserRoleServiceImpl berguna untuk mengecek hak akses user dan memberikan otentikasi kepada user berdasarkan role yang telah ditetapkan pada database.
+
+# Section 7
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot sebagai ilustrasi
+dari apa yang Anda jelaskan.
+	- Pada latihan no 1 saya menambahkan validasi checked dan berikut adalah code yang telah saya implementasikan:
+```
+type={checked ? "checkbox" : "hidden"}
+```
+	- Pada latihan no 2 saya menambahkan sebuah method setstate favorit = [] (list kosong). Berikut adalah code yang telah saya implementasikan:
+```
+deleteOnClick=()=>{
+    this.setState(
+      this.state.favItems=[]
+    );
+  };
+```
+	- Pada latihan no 3 saya menambahkan sebuah method HandleFavClick (code sesuai HandleItemClick sebelum saya edit) khusus untuk menghandle Fav dan menghilangkan condition else pada HandleItemClick.
+	- Pada latihan no 4 saya menambahkan checkbox dan method toogle untuk menvalidasi apakah checkbox sedang ON/OFF. berikut adalah code yang telah saya implementasikan:
+```
+ toggleButton = () => {
+    this.setState(currentState => ({
+      boolean: !currentState.boolean
+    }));
+  };
+```
+	- Pada latihan no 5 saya menambahkan file baru yang terdapat pada folder EmptyState yang isinya adalah code untuk menghandle MyFavorite apabila listnya kosong.
+2. Menurut pemahaman kamu selama pengerjaan tutorial ini, apa perbedaan antara state dan props?
+	- Menurut pemahaman saya, props atau property adalah sebuah component yang digunakan pada AppFunc dan component ini bisa dipanggil dimana saja. Sedangkan State adalah private component yang tidak bisa sembarang akses oleh component lain.
+3. Apa keuntungan menggunakan component (e.g. List, Item) di React? Berikan contohnya!
+	- Kelebihan menggunakan component dalam react adalah kita dapat memisahkan codingan menjadi beberapa bagian sehingga kegunaan components semakin spesifik. Contoh: Pada bagian List kita menghandle semua list movie, sedangkan pada bagian item kita menghandle bagian informasi mengenai movie.
+4. Menurut kamu, apa saja kelebihan menggunakan React dalam pengembangan web?
+	- Banyak kelebihan react dalam menggunakan pengembangan web yaitu: Componentnya dirakit sesuai dengan keiinginan kita, component yang bisa digunakan kembali/reuseable dan mudah dipelajari.
+5. Menurut kamu, apa saja kekurangan menggunakan React dalam pengembangan web?
+	- Kekurangan React dalam pengembangan web yaitu: Dokumentasi yang buruk, JSX yang sangat kompleks sehingga menyusahkan developer.
+source: https://www.konsepkoding.com/2020/08/1-pengenalan-reactjs-kekurangan-dan.html
