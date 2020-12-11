@@ -177,8 +177,8 @@ melakukan langkah - langkah tersebut?
 3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 7 pada Component Lifecycle pada pertanyaan ini.
 - <img src="/frontend-traveloke/1.png" alt="Foto">
 <img src="/frontend-traveloke/2.jpg" alt="Foto">
-<img src="/frontend-traveloke/3.jpg" alt="Foto">
-<img src="/frontend-traveloke/4.jpg" alt="Foto">
+<img src="/frontend-traveloke/3.JPG" alt="Foto">
+<img src="/frontend-traveloke/4.JPG" alt="Foto">
 <img src="/frontend-traveloke/5.jpg" alt="Foto">
 
 4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount. 
