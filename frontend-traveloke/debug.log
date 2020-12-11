@@ -1,0 +1,5 @@
+[1210/115651.029:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1211/103535.206:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1211/103535.213:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Marcel\AppData\Local\AVAST Software\Browser\User Data\Crashpad\attachments\1478f937-ecad-44e2-8c2b-7a3c1b761ce5: The system cannot find the path specified. (0x3)
+[1211/123439.681:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1211/191954.497:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
