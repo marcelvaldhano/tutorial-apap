@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/v1")
 public class HotelRestController {
     @Autowired
@@ -69,7 +70,7 @@ public class HotelRestController {
         }
     }
 
-    @GetMapping(value="/hotel")
+    @GetMapping(value="/hotels")
     private List<HotelModel> retrieveListHotel(){ return hotelRestService.retrieveListHotel();
 
     }
@@ -81,5 +82,11 @@ public class HotelRestController {
     private Mono<HotelDetail> postStatus(){
         return hotelRestService.postStatus();
     }
+
+//    @GetMapping(value = "/hotel/find")
+//    private Mono<String> getHotelByCityName(@RequestParam String cityName){
+//        String cityNameCleaned = cityName.replace('-',' ');
+//        return hotelRestService.getHotelByCityName(cityNameCleaned);
+//    }
 
 }
