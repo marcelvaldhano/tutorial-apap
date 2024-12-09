@@ -155,3 +155,36 @@ deleteOnClick=()=>{
 5. Menurut kamu, apa saja kekurangan menggunakan React dalam pengembangan web?
 	- Kekurangan React dalam pengembangan web yaitu: Dokumentasi yang buruk, JSX yang sangat kompleks sehingga menyusahkan developer.
 source: https://www.konsepkoding.com/2020/08/1-pengenalan-reactjs-kekurangan-dan.html
+
+# Section 8
+1. Ceritakan langkah - langkah yang kalian lakukan untuk solve LATIHAN no.1, dan mengapa kalian
+melakukan langkah - langkah tersebut?
+- Saya hanya menambahkan this.setState pada method handleSubmitAddHotel sehingga default value pada kolom input tersebut akan selalu kosong ketika user ingin menambahkan hotel.
+
+``
+ this.setState(
+                {
+                    namaHotel:'',
+                    alamat:'',
+                    nomorTelepon:'',
+                }
+``
+
+2. Jelaskan fungsi dari async dan await!
+- async: menandakan bahwa fungsi tersebut bersifat non-blocking (asynchronous)
+- await: membuat fungsi yang sedang dieksekusi harus berjalan hingga selesai sebelum code setelah await dieksekusi.
+
+3. Masukkan jawaban dari Screenshot yang diperintahkan di halaman 7 pada Component Lifecycle pada pertanyaan ini.
+- <img src="/frontend-traveloke/1.png" alt="Foto">
+<img src="/frontend-traveloke/2.jpg" alt="Foto">
+<img src="/frontend-traveloke/3.JPG" alt="Foto">
+<img src="/frontend-traveloke/4.JPG" alt="Foto">
+<img src="/frontend-traveloke/5.jpg" alt="Foto">
+
+4. Jelaskan fungsi dari componentDidMount, shouldComponentUpdate, componentDidUpdate, componentWillReceiveProps, componentWillUnmount. 
+Notes : Penjelasan harus mencantumkan “kapan fungsi dipanggil” dan “use case apa saja yang biasanya menggunakan lifecycle method tersebut”
+- componentDidMount: Fungsi ini dipanggil setelah component telah selesai dirender untuk melakukan fetching data.
+- shouldComponentUpdate: Fungsi ini dipanggil sebelum component melakukan render terhadap perubahan.
+- componentDidUpdate: Fungsi ini dipanggil setelah component telah dirender ulang dan sudah selesai di render. componentDidUpdate digunakan saat melakukan interaksi dengan environment non-React seperti HTTP Request.
+- componentWillReceiveProps: Fungsi ini dipanggil sebelum component melakukan props yang baru telah diupdate. Dengan begitu kita dapat membandingkan props yang lama dengan yang baru dan memeriksa apakah terdapat perubahan terhadap props tersebut. 
+- componentWillUnmount: Fungsi ini dipanggil sebelum component di hapus dari DOM. Biasanya pada lifecycle ini, kita akan melakukan cleanup seperti membatalkan network request dan menghilangkan event listener.
